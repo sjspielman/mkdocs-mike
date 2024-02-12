@@ -1,10 +1,6 @@
 # Welcome to Stephanie's test MkDocs website
 
 
-This is supposed to be versioned at 0.2. **BUMP!!!!!**
+**new version alert!** I'm hoping we're at version 0.3 now, please.
 
-deployed only by interactively pushing mike at command line:
-
-```
-mike deploy --push --update-aliases 0.2 latest
-```
+There is no local CLI bumping, only a manually-triggered GHA.
