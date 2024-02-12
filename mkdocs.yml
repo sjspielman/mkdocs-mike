@@ -1,0 +1,18 @@
+site_name: Stephanie's testdocs
+theme:
+  name: material
+  features:
+    - search.suggest    # displays in light gray how you might complete the word
+    - content.code.copy # code copy button in code blocks
+
+site_url: 'https://sjspielman.github.io/mkdocs-mike/'  # Trailing slash is recommended
+
+plugins:
+  - search
+ # - social # https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/#built-in-social-plugin
+
+
+# Mike, we don't know who you are, but thanks for the versioning.
+extra:
+  version:
+    provider: mike
