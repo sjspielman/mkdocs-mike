@@ -1,0 +1,44 @@
+# https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
+name: build the site
+
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+
+      - name: Install mkdocs and mike
+        run: |
+          pip install mkdocs-material
+          pip install mike
+
+      #- name: Better git fetching
+      #  run: git fetch origin gh-pages --depth=1
+
+      - name: Read VERSION file
+        id: getversion
+        run: echo "version=$(cat VERSION)" >> $GITHUB_OUTPUT
+
+      - name: Deploy with mike
+        id: mikedeploy
+        run: mike deploy --push --update-aliases ${{ steps.getversion.outputs.version }} latest  # we could deploy with mike. this dude set it up to grab version from branch name: https://github.com/RemoteCloud/public-documentation/blob/61db7d9800ac987d7ec79b082b64dbbd9809a155/.github/workflows/build_docs.yml#L73-L76

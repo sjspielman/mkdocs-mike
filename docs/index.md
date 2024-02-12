@@ -1,9 +1,5 @@
 # Welcome to Stephanie's test MkDocs website
 
-This is not yet versioned.
+This is supposed to be versioned at 0.1
 
-Deployed with their recommended CI script, with
-
-```
-mkdocs gh-deploy --force
-```
+Deployed with my version of the script.
