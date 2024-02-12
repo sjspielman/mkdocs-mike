@@ -26,6 +26,9 @@ jobs:
           pip install mkdocs-material
           pip install mike
 
+      - name: Clean fetch
+        run: git fetch origin gh-pages --depth=1
+
       - name: Deploy with mike
         id: mikedeploy
         run: mike deploy --push --update-aliases ${{ github.event.inputs.version }} latest
