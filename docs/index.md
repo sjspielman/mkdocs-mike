@@ -2,4 +2,8 @@
 
 This is supposed to be versioned at 0.1
 
-Deployed with my version of the script.
+deployed with regular version of script, and pushing mike at command line:
+
+```
+mike deploy --push --update-aliases 0.1 latest
+```
