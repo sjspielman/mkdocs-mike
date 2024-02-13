@@ -1,4 +1,4 @@
-site_name: Stephanie's testdocs
+site_name: rtd/mm test docs
 theme:
   name: material
   features:
@@ -12,7 +12,8 @@ plugins:
  # - social # https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/#built-in-social-plugin
 
 
+#
 # Mike, we don't know who you are, but thanks for the versioning.
-extra:
-  version:
-    provider: mike
+#extra:
+#  version:
+#    provider: mike
