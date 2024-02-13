@@ -1,2 +1,2 @@
 # mkdocs-mike
-come on, mike.
+still named mike, but now on RTD.
